@@ -1,47 +1,91 @@
-<section class="order mb-5">
-    <div class="container   wow animate__slideInUp" id="orderContainer">
-        <h2 class="text-center fs-2 fw-bold mb-4">Сделать заказ</h2>
-        <form>
+<section class="order d-flex align-items-center">
+    <div class="container" id="orderContainer" *ngIf="!isOrderCreating || !isOrderSuccess">
+        <h2 class="text-center fs-2 fw-bold my-4">Сделать заказ</h2>
+        <form [formGroup]="orderForm">
             <div class="row">
                 <div class="col-xl-6 col-md-10 mx-auto orderInputs">
                     <div class="row ">
-  
+                        <div class="mb-3 col-12">
+                            <label for="inputProduct" [class]="'form-label' + (product?.invalid && (product?.dirty || product?.touched) ? ' text-danger': '')">Товар</label>
+                            <input type="text" class="form-control" id="inputProduct"
+                                aria-describedby="productNameDescribe"
+                                formControlName = "product"
+                                >
+                                <div *ngIf="product?.invalid && (product?.dirty || product?.touched)">
+                                    <div class="text-danger" *ngIf="product?.errors?.['required']">Введите название товара </div>
+                                    <!-- <div class="text-danger" *ngIf="email?.errors?.['email']">Email is incorrect </div> -->
+                                  </div>    
+                        </div>
+                        
+
                         <div class="mb-3 col-xl-4 col-md-6">
-                            <label for="inputName" class="form-label">Имя</label>
-                            <input type="text" class="form-control" id="inputName"
-                                aria-describedby="inputNameDescribe">
-                            <!-- <div id="inputNameDescribe" class="form-text">Введите имя.</div> -->
+                            <!-- <label for="inputName" [class]="{ 'form-label': true, 'text-danger': (name?.invalid && (name?.dirty || name?.touched))}">Имя</label> -->
+                            <label for="inputName"
+                                [class]="'form-label' + (name?.invalid && (name?.dirty || name?.touched) ? ' text-danger' : '' ) ">Имя</label>
+                            <input type="text" class="form-control" id="inputName" aria-describedby="inputNameDescribe" formControlName="name" placeholder="Иван">
+                            <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+                                <div class="text-danger" *ngIf="name?.errors?.['required']">Введите имя </div>
+                                <div class="text-danger" *ngIf="name?.errors?.['pattern']">Должны быть только буквы</div>
+                            </div>
+                                
                         </div>
                         <div class="mb-3 col-xl-4 col-md-6">
-                            <label for="inputLastName" class="form-label">Фамилия</label>
-                            <input type="text" class="form-control" id="inputLastName">
+                            <label for="inputLastName"
+                                [class]="'form-label' + (lastname?.invalid && (lastname?.dirty || lastname?.touched) ? ' text-danger' : '' ) ">
+                                Фамилия</label>
+                            <input type="text" class="form-control" id="inputLastName" formControlName="lastname" placeholder="Иванов">
+                            <div *ngIf="lastname?.invalid && (lastname?.dirty || lastname?.touched)">
+                                <div class="text-danger" *ngIf="lastname?.errors?.['required']">Введите фамилию </div>
+                                <div class="text-danger" *ngIf="lastname?.errors?.['pattern']">Должны быть только буквы</div>
+                            </div>
                         </div>
                         <div class="mb-3 col-xl-4 col-md-6">
-                            <label for="inputPhone" class="form-label">Телефон</label>
-                            <input type="text" class="form-control" id="inputPhone">
+                            <label for="inputPhone" [class]="'form-label' + (phone?.invalid && (phone?.dirty || phone?.touched) ? ' text-danger' : '' ) ">
+                                Телефон</label>
+                            <input type="text" class="form-control" id="inputPhone" formControlName = "phone" placeholder="+12345678901">
+                            <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)">
+                                <div class="text-danger" *ngIf="phone?.errors?.['required']">Введите телефон </div>
+                                <div class="text-danger" *ngIf="phone?.errors?.['pattern']">Должно быть 11 цифр</div>
+                            </div>
                         </div>
                         <div class="mb-3 col-xl-6 col-md-6">
-                            <label for="inputCountry" class="form-label">Страна</label>
-                            <input type="text" class="form-control" id="inputCountry">
+                            <label for="inputCountry" [class]="'form-label' + (country?.invalid && (country?.dirty || country?.touched) ? ' text-danger' : '' ) ">Страна</label>
+                            <input type="text" class="form-control" id="inputCountry" formControlName = "country">
+                            <div *ngIf="country?.invalid && (country?.dirty || country?.touched)">
+                                <div class="text-danger" *ngIf="country?.errors?.['required']">Введите страну</div>
+                            </div>
                         </div>
                         <div class="mb-3 col-xl-6 col-md-4">
-                            <label for="inputIndex" class="form-label">Индекс</label>
-                            <input type="text" class="form-control" id="inputIndex">
+                            <label for="inputIndex" [class]="'form-label' + (index?.invalid && (index?.dirty || index?.touched) ? ' text-danger' : '' ) ">Индекс</label>
+                            <input type="text" class="form-control" id="inputIndex" formControlName = "index">
+                            <div *ngIf="index?.invalid && (index?.dirty || index?.touched)">
+                                <div class="text-danger" *ngIf="index?.errors?.['required']">Введите индекс</div>
+                            </div>
                         </div>
-                        <div class="mb-4 col-xl-12 col-md-8">
-                            <label for="inputAddress" class="form-label">Адрес</label>
-                            <input type="text" class="form-control" id="inputAddress">
+                        <div class="mb-3 col-xl-12 col-md-8">
+                            <label for="inputAddress" [class]="{'form-label': true, 'text-danger': address?.invalid && (address?.dirty || address?.touched) }">Адрес</label>
+                            
+                            <input type="text" class="form-control" id="inputAddress" formControlName = "address">
+                            <div *ngIf="address?.invalid && (address?.dirty || address?.touched)">
+                                <div class="text-danger" *ngIf="address?.errors?.['required']">Введите адрес</div>
+                                <div class="text-danger" *ngIf="address?.errors?.['pattern']">Только буквы, цифры, пробелы, дефис и слеш</div>
+                            </div>
                         </div>
-                        <div class="col">
-                            <button type="submit" class="btn btn-primary sendOrder"
-                                id="btnSendOrder">Отправить</button>
+                        <div class="mb-3 col-12">
+                            <label for="inputComment" class="form-label">Комментарий</label>
+                            <input type="area" class="form-control" id="inputComment" formControlName = "comment">
+                        </div>
+                        <div class="col justify-content-center text-center mb-3">
+                            <button type="submit" class="btn btn-primary sendOrder mx-auto" [disabled]="!orderForm.valid"
+                                id="btnSendOrder" (click)="sendOrder()">Отправить</button>
+                            <div class="text-danger" *ngIf="isOrderCreating && !isOrderSuccess">Произошла ошибка. Попробуйте еще раз.</div>    
                         </div>
                     </div>
                 </div>
             </div>
         </form>
     </div>
-    <div class="orderThanks border border-primary rounded-2 mx-auto row align-items-center" id="orderThanks">
+    <div class="orderThanks border border-primary rounded-2 mx-auto row align-items-center" id="orderThanks" *ngIf="isOrderCreating && isOrderSuccess">
         <div class="text-center h2 col">Спасибо за заказ!</div>
         <div class="text-center h3 col">Мы свяжемся с вами в ближайшее время!</div>
     </div>

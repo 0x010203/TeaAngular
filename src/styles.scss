@@ -7,3 +7,15 @@ body {
     font-family: Arial, sans-serif;
     font-size: 16px;
 }
+
+/* Importing Bootstrap SCSS file. */
+$accordion-icon-active-color: #ffffff; 
+$accordion-icon-color: #ffffff;
+@import '~bootstrap/scss/bootstrap';
+
+.accordion-button:focus{
+    box-shadow: none;
+}
+.accordion-item, .accordion-button  {
+    border-radius: 6px !important;
+  }

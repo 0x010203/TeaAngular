@@ -10,10 +10,12 @@ import { ProductComponent } from './components/pages/product/product.component';
 import { ProductsComponent } from './components/pages/products/products.component';
 import { OrderComponent } from './components/pages/order/order.component';
 import { FooterComponent } from './components/common/footer/footer.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './services/product.service';
 import { CropStringPipe } from './pipes/crop-string.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+//import { MainComponent } from './components/pages/main/main.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +33,10 @@ import { CropStringPipe } from './pipes/crop-string.pipe';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
-
+    NgbModule,
+    //MainComponent,
   ],
   providers: [ProductService],
   bootstrap: [AppComponent/*, HeaderComponent*/]

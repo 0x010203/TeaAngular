@@ -1,13 +1,14 @@
-<div class="card">
-    <a class="teaImage" href="{{product.image}}">
-        <img src="{{product.image}}" class="card-img-top w-100" alt="Чай">
+<div class="d-flex flex-column justify-content-center align-items-center p-5">
+    <h5 class="my-3 h3">{{product.title}}</h5>
+    <a class="teaImage d-flex justify-content-center" href="{{product.image}}">
+        <img src="{{product.image}}" class="card-img-top" alt="Чай">
     </a>
-    <div class="card-body">
-        <h5 class="card-title">{{product.title}}</h5>
-        <p class="card-text">{{product.description | cropString : 200}}</p>
-        <div class="card-footer bg-white border-0 d-flex justify-content-between">
-            <div>{{product.price | currency :'RUB':'руб':'1.2-2'}}</div>
-            <button class="btn btn-primary px-5">Подробнее</button>
+    <div class="card-body px-sm-5">
+        
+        <p class="card-text">{{product.description}}</p>
+        <div class="d-flex justify-content-between flex-column align-items-center">
+            <div class="my-3">Цена: {{product.price | currency :'RUB':'руб':'1.2-2'}}</div>
+            <button class="btn btn-primary px-5" [routerLink]="'/order'" [queryParams]="{product: product.title}">Купить</button>
         </div>
         
         <!-- <div class="card  wow animate__backInLeft">

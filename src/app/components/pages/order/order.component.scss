@@ -1,3 +1,6 @@
+.order{
+    min-height: calc(100vh - 112px);
+}
 .sendOrder {
     max-width: 156px;
     padding: 7px 37px;
@@ -6,5 +9,10 @@
 .orderThanks {
     width: 300px;
     height: 150px;
-    display: none;
+    //display: none;
 }
+
+input.ng-invalid.ng-dirty, 
+input.ng-invalid.ng-touched{
+    border: 1px solid rgb(220, 53, 69);
+} 

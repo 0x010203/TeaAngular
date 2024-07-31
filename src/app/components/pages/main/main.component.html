@@ -13,17 +13,83 @@
         </div>
     </div>
   </section>
+  <!-- <div>
+    <button (click)="showTip()">Modal</button>
+  </div> -->
   <section class="faq mb-5">
     <div class="container">
         <h2 class="text-center fs-2 fw-bold mb-4">Ответы на часто задаваемые вопросы</h2>
         
-        <div class="row justify-content-center">
-            <div class="col-xl-8 col-md-10 px-3" id="accordion">
-                <h3 class="p-4 pe-5 mb-3 rounded-2 bg-primary text-white">Собираете ли вы подарочные боксы?</h3>
-                <div class="h-auto border-0">
-                    <p>Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!</p>
+        <div class="row justify-content-center " >
+            <div class="col-xl-8 col-md-10 px-3 accordion" id="accordion">
+                <div class="accordion-item border-0">
+                    <h3 class="rounded-2 bg-primary text-white accordion-header">
+                        <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                            Собираете ли вы подарочные боксы?
+                        </button>
+                    </h3>
+                    <div class="h-auto border-0 accordion-collapse collapse show" id="collapse1" data-bs-parent="#accordion">
+                        <div class="accordion-body border-0">
+                            Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+                        </div>
+                    </div>
                 </div>
-                <h3 class="p-4 pe-5 mb-3 rounded-2 bg-primary text-white">Сколько у вас разновидностей чая?</h3>
+                <div class="accordion-item border-0">
+                    <h3 class="rounded-2 bg-primary text-white accordion-header">
+                        <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                            Сколько у вас разновидностей чая?
+                        </button>
+                
+                    </h3>
+                    <div class="h-auto border-0 accordion-collapse collapse" id="collapse2" data-bs-parent="#accordion">
+                        <div class="accordion-body border-0">
+                            У нас более десяти разновидностей чая, в том числе белый, матча и другие.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0">
+                    <h3 class="rounded-2 bg-primary text-white accordion-header">
+                        <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                            В какой срок осуществляется доставка?
+                        </button>
+                    </h3>
+                    <div class="h-auto border-0 accordion-collapse collapse " id="collapse3" data-bs-parent="#accordion">
+                        <div class="accordion-body border-0">
+                            Доставка осуществляется в течении двух дней. Для отдаленных регионов сроки доставки зависят от выбранного способа доставки.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0">
+                    <h3 class="rounded-2 bg-primary text-white accordion-header">
+                        <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                            У вас обновляется ассортимент?
+                        </button>
+                    </h3>
+                    <div class="h-auto border-0 accordion-collapse collapse " id="collapse4" data-bs-parent="#accordion">
+                        <div class="accordion-body border-0">
+                            Да, у нас периодически пояаляются новые сорта чая.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0 rounded-2 ">
+                    <h3 class="rounded-2 bg-primary text-white accordion-header">
+                        <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                            Какого объема у вас пачки чая?
+                        </button>
+                    </h3>
+                    <div class="h-auto border-0 accordion-collapse collapse " id="collapse5" data-bs-parent="#accordion">
+                        <div class="accordion-body border-0">
+                            Пачки чая от 50 до 200 грамм.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <h3 class="p-4 pe-5 mb-3 rounded-2 bg-primary text-white">Сколько у вас разновидностей чая?</h3>
                 <div class="h-auto border-0">
                     <p>У нас более десяти разновидностей чая, в том числе белый, матча и другие.</p>
                 </div>
@@ -38,9 +104,36 @@
                 <h3 class="p-4 pe-5 mb-3  rounded-2 bg-primary text-white">Какого объема у вас пачки чая?</h3>
                 <div class="h-auto border-0">
                     <p>Пачки чая от 50 до 200 грамм.</p>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
+
+    
   </section>
-  
+
+  <!-- <button type="button" class="btn btn-primary" (click)="show(modalTipElem)">
+    Launch demo modal
+  </button> -->
+
+<div class="modal fade" id="modalTip" tabindex="-1" role="dialog" aria-labelledby="modalTeaCollection"
+    aria-hidden="true" #modalTipElem>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header justify-content-end border-0">
+                <button type="button" class="close border-0 bg-white display-8" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center display-8">
+                Посмотрите наши чайные коллекции
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                <button type="button" class="btn btn-primary" [routerLink]="'/products'" data-bs-dismiss="modal">Смотреть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+ 

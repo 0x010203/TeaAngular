@@ -23,6 +23,21 @@ export class ProductComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe((params)=>{
+      if (params['id']){
+        this.productService.getProduct(+params['id'])
+        .subscribe({
+          next: (data)=>{
+            this.product = data;
+          },
+          error: (error)=>{
+            this.router.navigate(['/']);
+          }
+        }); 
+        
+        
+      }
+    })
   }
 
 }
