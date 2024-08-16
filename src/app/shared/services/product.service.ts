@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { ProductType } from '../../types/product.type';
-import { Observable, map, tap } from 'rxjs';
-import { OrderType } from 'src/types/order.type';
-import { ResponseOrderType } from 'src/types/response-order.type';
+import { HttpClient  } from '@angular/common/http';
+import { ProductType } from '../../../types/product.type';
+import { Observable } from 'rxjs';
+import { OrderType } from '../../../types/order.type';
+import { ResponseOrderType } from '../../../types/response-order.type';
+import { environment } from '../../../environments/environment';
 @Injectable(
-//   {
-//   providedIn: 'root'
-// }
+  {
+  providedIn: 'root'
+}
 )
 export class ProductService {
 
-  private url: string = 'https://testologia.ru/';
-  private products: ProductType[] = [];
+  //private url: string = 'https://testologia.ru/';
+  private url: string = environment.apiUrl;
+  //private products: ProductType[] = [];
 
   constructor(private http: HttpClient) {}
 

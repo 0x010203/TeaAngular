@@ -5,6 +5,7 @@ import {Modal} from 'bootstrap';
 import { Observable, Subscription } from 'rxjs';
 //import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
+
 @Component({
   selector: 'app-main',
    //standalone: true,
@@ -56,25 +57,12 @@ show(modalElement: HTMLElement){
 }
 
   ngOnInit(): void {
-    // $(".btn").addClass("hvr hvr-sweep-to-top");
-    
-    // let icons = {
-    //   header: "iconClosed", // custom icon class
-    //   activeHeader: "iconOpen", // custom icon class
-    // };
-  
-    // $("#accordion").accordion({
-    //   icons: icons,
-    // });
     this.subscription = this.observable.subscribe((modal: bootstrap.Modal)=>{
-      //console.log(modal);
+
       modal.show();
     });
   }
 
-  // public showTip(): void{
-  //   $(window).$('#modalTip').modal('show');
-  // }
 
   ngOnDestroy(): void{
     this.subscription?.unsubscribe();

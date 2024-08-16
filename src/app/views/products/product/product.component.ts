@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductService } from 'src/app/services/product.service';
-import { ProductType } from 'src/types/product.type';
+import { ProductService } from '../../../shared/services/product.service';
+import { ProductType } from '../../../../types/product.type';
 
 @Component({
   selector: 'app-product',
@@ -31,6 +31,7 @@ export class ProductComponent implements OnInit {
             this.product = data;
           },
           error: (error)=>{
+            console.log(error);
             this.router.navigate(['/']);
           }
         }); 

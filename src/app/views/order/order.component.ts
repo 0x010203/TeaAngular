@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { orderFormValidator } from 'src/app/functions/validators';
-import { ProductService } from 'src/app/services/product.service';
+import { orderFormValidator } from '../../shared/functions/validators';
+import { ProductService } from '../../shared/services/product.service';
 import { OrderType } from 'src/types/order.type';
 //import { controlValidator } from 'src/app/functions/validators';
 
