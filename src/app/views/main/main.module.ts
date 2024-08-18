@@ -5,6 +5,8 @@ import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main.component';
 import { SharedModule } from '../../shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+//import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 //import * as bootstrap from "bootstrap";
 
@@ -17,7 +19,9 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     SharedModule,
     RouterModule,
-    MainRoutingModule
+    MainRoutingModule,
+    NgbAccordionModule,
+    //NgbModalModule
   ],
   exports: [
     MainRoutingModule

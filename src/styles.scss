@@ -11,6 +11,8 @@ body {
 /* Importing Bootstrap SCSS file. */
 $accordion-icon-active-color: #ffffff; 
 $accordion-icon-color: #ffffff;
+
+
 @import '~bootstrap/scss/bootstrap';
 
 .accordion-button:focus{
@@ -19,6 +21,12 @@ $accordion-icon-color: #ffffff;
 .accordion-item, .accordion-button  {
     border-radius: 6px !important;
   }
+
+// .accordion-button {
+//     background-color: ;
+// }  
 /* Importing Bootstrap SCSS file. */
 //@import '~bootstrap/scss/bootstrap';
+
+
 

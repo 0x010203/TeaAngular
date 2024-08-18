@@ -13,10 +13,8 @@
         </div>
     </div>
   </section>
-  <!-- <div>
-    <button (click)="showTip()">Modal</button>
-  </div> -->
-  <section class="faq mb-5">
+  
+  <!-- <section class="faq mb-5">
     <div class="container">
         <h2 class="text-center fs-2 fw-bold mb-4">Ответы на часто задаваемые вопросы</h2>
         
@@ -89,96 +87,64 @@
                     </div>
                 </div>
 
-                <!-- <h3 class="p-4 pe-5 mb-3 rounded-2 bg-primary text-white">Сколько у вас разновидностей чая?</h3>
-                <div class="h-auto border-0">
-                    <p>У нас более десяти разновидностей чая, в том числе белый, матча и другие.</p>
-                </div>
-                <h3 class="p-4 pe-5 mb-3 rounded-2 bg-primary text-white">В какой срок осуществляется доставка?</h3>
-                <div class="h-auto border-0">
-                    <p>Доставка осуществляется в течении двух дней. Для отдаленных регионов сроки доставки зависят от выбранного способа доставки.</p>
-                </div>
-                <h3 class="p-4 pe-5 mb-3 rounded-2 bg-primary text-white">У вас обновляется ассортимент?</h3>
-                <div class="h-auto border-0">
-                    <p>Да, у нас периодически пояаляются новые сорта чая.</p>
-                </div>
-                <h3 class="p-4 pe-5 mb-3  rounded-2 bg-primary text-white">Какого объема у вас пачки чая?</h3>
-                <div class="h-auto border-0">
-                    <p>Пачки чая от 50 до 200 грамм.</p>
-                </div> -->
+             
             </div>
         </div>
     </div>
 
     
-  </section>
-
-  <!-- <section class="faq mb-5">
-    <div class="container">
-        <h2>NGBootstrap</h2>
-        <div ngbAccordion>
-            <div ngbAccordionItem [collapsed]="false">
-                <h2 ngbAccordionHeader>
-                    <button ngbAccordionButton>Simple</button>
-                </h2>
-                <div ngbAccordionCollapse>
-                    <div ngbAccordionBody>
-                        <ng-template>
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-                            officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
-                            moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
-                            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
-                            butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
-                            haven't heard of them accusamus labore sustainable VHS.
-                        </ng-template>
-                    </div>
-                </div>
-            </div>
-            <div ngbAccordionItem>
-                <h2 ngbAccordionHeader>
-                    <button ngbAccordionButton>
-                        <span>&#9733; <b>Fancy</b> title &#9733;</span>
-                    </button>
-                </h2>
-                <div ngbAccordionCollapse>
-                    <div ngbAccordionBody>
-                        <ng-template>
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-                            officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
-                            moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
-                            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
-                            butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
-                            haven't heard of them accusamus labore sustainable VHS.
-                        </ng-template>
-                    </div>
-                </div>
-            </div>
-            <div ngbAccordionItem [disabled]="true">
-                <h2 ngbAccordionHeader>
-                    <button ngbAccordionButton>Disabled</button>
-                </h2>
-                <div ngbAccordionCollapse>
-                    <div ngbAccordionBody>
-                        <ng-template>
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-                            officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
-                            moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
-                            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
-                            butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
-                            haven't heard of them accusamus labore sustainable VHS.
-                        </ng-template>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-    </div>
   </section> -->
 
+<section class="faq mb-5">
+    <div class="container">
+        <div class="row justify-content-center ">
+            <div class="col-xl-8 col-md-10 px-3 accordion">
+                <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+                    <ngb-panel title="Собираете ли вы подарочные боксы?" type="primary">
+                        <ng-template class="ngbPanelPrimary" ngbPanelContent>
+                            <p>Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и
+                                стоимость!</p>
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel>
+                        <ng-template ngbPanelTitle>Сколько у вас разновидностей чая?</ng-template>
+                        <ng-template ngbPanelContent>
+                            <p>У нас более десяти разновидностей чая, в том числе белый, матча и другие.</p>
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel>
+                        <ng-template ngbPanelTitle>В какой срок осуществляется доставка?</ng-template>
+                        <ng-template ngbPanelContent>
+                            <p>Доставка осуществляется в течении двух дней. Для отдаленных регионов сроки доставки
+                                зависят от выбранного способа доставки.</p>
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel>
+                        <ng-template ngbPanelTitle>У вас обновляется ассортимент?</ng-template>
+                        <ng-template ngbPanelContent>
+                            <p>Да, у нас периодически пояаляются новые сорта чая.</p>
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel>
+                        <ng-template ngbPanelTitle>Какого объема у вас пачки чая?</ng-template>
+                        <ng-template ngbPanelContent>
+                            <p>Пачки чая от 50 до 200 грамм.</p>
+                        </ng-template>
+                    </ngb-panel>
+
+                </ngb-accordion>
+            </div>
+        </div>
+    </div>
+</section>
   <!-- <button type="button" class="btn btn-primary" (click)="show(modalTipElem)">
     Launch demo modal
   </button> -->
 
-<div class="modal fade" id="modalTip" tabindex="-1" role="dialog" aria-labelledby="modalTeaCollection"
+  <!-- <ng-template #popup> -->
+    <!-- class modal, fade removed -->
+<!-- <div class="modal fade" id="modalTip" tabindex="-1" role="dialog" aria-labelledby="modalTeaCollection"
+
     aria-hidden="true" #modalTipElem>
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -196,6 +162,24 @@
             </div>
         </div>
     </div>
-</div>
-
- 
+</div> -->
+<!-- </ng-template> -->
+<ng-template #popup let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Совет дня ...</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+	</div>
+	<div class="modal-body">
+		<form>
+			<div class="mb-3">
+				<div class="display-8">
+					Посмотрите наши чайные коллекции
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-secondary" (click)="modal.close()">Отмена</button>
+		<button type="button" class="btn btn-primary" [routerLink]="'/products'" (click)="modal.close()">Смотреть</button>
+	</div>
+</ng-template>
