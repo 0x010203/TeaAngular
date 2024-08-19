@@ -4,6 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 //declare var $: any;
 //import {Modal} from 'bootstrap';
 import { Observable, Subscription } from 'rxjs';
+import { environment } from '../../../environments/environment';
 //import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -68,7 +69,10 @@ ngAfterViewInit(){
 
   ngOnDestroy(): void{
     this.subscription?.unsubscribe();
-    console.log('Отписались');
+    if (!environment.production){
+      console.log('Отписались');
+    }
+    
   }
     
   
